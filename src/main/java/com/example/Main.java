@@ -12,7 +12,7 @@ import java.time.LocalTime;
  * Main application class for scanning unique IP addresses.
  */
 public class Main {
-    final static String READER_TYPE_BUFFERED = "mapped";
+    final static String READER_TYPE_BUFFERED = "buffered";
 
     public static void main(String[] args) throws Exception {
         System.out.println("Start scan IP addresses ...");
