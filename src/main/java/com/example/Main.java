@@ -34,12 +34,11 @@ public class Main {
             return;
         }
 
-        System.out.println(LocalTime.now());
         IPReader reader =
                 READER_TYPE_BUFFERED.equals(readerType) ? new BufferedInputIPReader() : new MappedByteBufferIPReader();
         IPScanner scanner = new IPScanner(reader);
         long count = scanner.scan(file) ;
-        System.out.println(LocalTime.now());
+
         System.out.println("Unique IP addresses: " + count);
     }
 }
