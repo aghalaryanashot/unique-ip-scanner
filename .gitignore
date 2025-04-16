@@ -10,5 +10,6 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
+target
 ### Mac OS ###
 .DS_Store
