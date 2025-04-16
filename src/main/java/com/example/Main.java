@@ -14,14 +14,18 @@ public class Main {
     final static String READER_TYPE_BUFFERED = "mapped";
 
     public static void main(String[] args) throws Exception {
+        System.out.println("Start scan IP addresses ...");
+        String readerType = null;
         if (args.length < 1 || args.length > 2) {
-            System.out.println("Usage: java -jar ipscanner.jar <file-path> " +
-                    "or java -jar ipscanner.jar <file-path> <reader-type: mapped|buffered>");
+            System.out.println("Usage: java -jar unique-ip-scanner-1.0-SNAPSHOT.jar <file-path> " +
+                    "or java -jar unique-ip-scanner-1.0-SNAPSHOT.jar <file-path> <reader-type: mapped|buffered>");
             return;
         }
 
         String filePath = args[0];
-        String readerType = args[1].toLowerCase();
+        if (args.length == 2) {
+            readerType = args[1].toLowerCase();
+        }
 
         File file = new File(filePath);
         if (!file.exists()) {
