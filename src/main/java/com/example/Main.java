@@ -6,6 +6,7 @@ import com.example.io.reader.IPReader;
 import com.example.io.reader.MappedByteBufferIPReader;
 
 import java.io.File;
+import java.time.LocalTime;
 
 /**
  * Main application class for scanning unique IP addresses.
@@ -33,11 +34,12 @@ public class Main {
             return;
         }
 
+        System.out.println(LocalTime.now());
         IPReader reader =
                 READER_TYPE_BUFFERED.equals(readerType) ? new BufferedInputIPReader() : new MappedByteBufferIPReader();
         IPScanner scanner = new IPScanner(reader);
         long count = scanner.scan(file) ;
-
+        System.out.println(LocalTime.now());
         System.out.println("Unique IP addresses: " + count);
     }
 }

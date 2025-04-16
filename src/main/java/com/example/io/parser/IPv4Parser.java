@@ -48,7 +48,6 @@ public class IPv4Parser implements IPParser {
     }
 
     public void reset() {
-        Arrays.fill(parts, 0);
         currentPartsIndex = 0;
         currentValue = 0;
     }
